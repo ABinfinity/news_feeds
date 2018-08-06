@@ -12,19 +12,22 @@ for key,value in url_list.items():
 	# print("key----->"+key)
 	# print(len(d['entries']))
 	try:
-		# for sup in range(len(d['entries'])):
-		title = "Title-->"+d['entries'][1]['title']
-		
-		full_story = "Full story-->"+d['entries'][1]['summary_detail']['value']
-		
-		link = d['entries'][1]['link']
+		for sup in range(len(d['entries'])):
+			title = "Title-->"+d['entries'][sup]['title']
 			
+			short = "Short-->"+d['entries'][sup]['summary_detail']['value']
+			
+			link = d['entries'][sup]['link']
+
+			paragraph = news_scraper.scraper.scraper(key,link)
+			print(title)
+			print(short)
+			print("link-->"+link)
+			print(paragraph)
+
+				
 
 	except Exception as e:
 		raise e
 	
-	paragraph = news_scraper.scraper.scraper(key,link)
-	print(title)
-	print(full_story)
-	print(link)
-	print(paragraph)
+	
