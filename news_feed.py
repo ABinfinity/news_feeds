@@ -23,8 +23,8 @@ for key,value in url_list.items():
 	except Exception as e:
 		raise e
 	
-	source = news_scraper.scraper.scraper(key,link)
+	paragraph = news_scraper.scraper.scraper(key,link)
 	print(title)
 	print(full_story)
 	print(link)
-	print(source)
+	print(paragraph)

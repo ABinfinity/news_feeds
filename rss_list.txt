@@ -31,14 +31,11 @@ reuters--->StandardArticleBody_body
 india today-->description
 times now--->Normal
 the new indian express--->hasrelatedarticle1
-mashable
-twitter
-pinkvilla
-the quint
-livemint
-bloomberg quint
-ib times
-business today
+livemint-->content
+bloomberg quint-->story-element story-element-text
+ib times-->article_content
+business today-->story-right relatedstory
+
 
 
 
