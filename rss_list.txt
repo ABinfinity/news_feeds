@@ -6,11 +6,12 @@ https://timesofindia.indiatimes.com/rssfeedstopstories.cms
 
 https://www.thehindu.com/news/feeder/default.rss
 
-https://indianexpress.com/section/india/feed/
+//https://indianexpress.com/section/india/feed/
 
-https://www.indiatoday.in/rss/1206584
+//https://www.indiatoday.in/rss/1206584
 
-http://feeds.feedburner.com/digit/latest-from-digit
+http://rss.cnn.com/rss/edition.rss
+
 -------------------------------------------------------------------------------------------------------------------------
 
 USEFUL LINKS-->
@@ -22,3 +23,22 @@ https://www.pythonforbeginners.com/feedparser/using-feedparser-in-python
 https://wiki.python.org/moin/RssLibraries
 
 https://pypi.org/project/feedparser/
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+hindustan times---->story-details
+reuters--->StandardArticleBody_body
+india today-->description
+times now--->Normal
+the new indian express--->hasrelatedarticle1
+mashable
+twitter
+pinkvilla
+the quint
+livemint
+bloomberg quint
+ib times
+business today
+
+
+

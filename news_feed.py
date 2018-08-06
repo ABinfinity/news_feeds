@@ -1,26 +1,30 @@
-from bs4 import BeautifulSoup
 import requests
 import feedparser
+import news_scraper
 
-d = feedparser.parse('https://www.hindustantimes.com/rss/topnews/rssfeed.xml')
-print(d['entries'][1]['title'])
-# print()
-# print(d['entries'][1]['title_detail']['value'])
-print()
-print(d['entries'][1]['summary'])
-# print()
-# print(d['entries'][1]['summary_detail']['value'])
-print()
-print(d['entries'][1]['media_content'][0]['url'])
-print()
-# try:
-# 	for sup in range(len(d['entries'])):
-# 		print("Title-->"+d['entries'][sup]['title'])
-# 		print()
-# 		print("Full story-->"+d['entries'][sup]['summary_detail']['value'])
-# 		print()
-# 		print("link-->"+d['entries'][sup]['link'])
-# 		print()
 
-# except Exception as e:
-# 	raise e
+# url_list = {'hindustan_times':'https://www.hindustantimes.com/rss/topnews/rssfeed.xml','ndtv_news':'http://feeds.feedburner.com/ndtvnews-top-stories','india_times':'https://timesofindia.indiatimes.com/rssfeedstopstories.cms','the_hindu':'https://www.thehindu.com/news/feeder/default.rss','india_today':'https://www.indiatoday.in/rss/1206584'}
+url_list = {'hindustan_times':'https://www.hindustantimes.com/rss/topnews/rssfeed.xml'}
+
+
+for key,value in url_list.items():
+	d = feedparser.parse(value)
+	# print("key----->"+key)
+	# print(len(d['entries']))
+	try:
+		# for sup in range(len(d['entries'])):
+		title = "Title-->"+d['entries'][1]['title']
+		
+		full_story = "Full story-->"+d['entries'][1]['summary_detail']['value']
+		
+		link = d['entries'][1]['link']
+			
+
+	except Exception as e:
+		raise e
+	
+	source = news_scraper.scraper.scraper(key,link)
+	print(title)
+	print(full_story)
+	print(link)
+	print(source)
