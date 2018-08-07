@@ -26,14 +26,14 @@ https://pypi.org/project/feedparser/
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-hindustan times---->story-details
-reuters--->StandardArticleBody_body
-india today-->description
-times now--->Normal
-the new indian express--->hasrelatedarticle1
-livemint-->content
-bloomberg quint-->story-element story-element-text
-ib times-->article_content
+//hindustan times---->story-details
+//reuters--->StandardArticleBody_body-->http://feeds.reuters.com/reuters/INtopNews
+//india today-->description
+//times now--->Normal
+//the new indian express--->hasrelatedarticle1
+//livemint-->content
+//bloomberg quint-->story-element story-element-text
+//ib times-->article_content
 business today-->story-right relatedstory
 
 
