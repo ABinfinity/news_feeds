@@ -25,13 +25,13 @@ class scraper():
 			article = link.find('div', class_='StandardArticleBody_body').get_text()
 			return article
 		elif key == 'indian_express':
-			article = link.find('div', class_='hasrelatedarticle1').get_text()
+			article = link.find('div', id ='storyContent').get_text()
 			return article
 		elif key == 'livemint':
 			article = link.find('div', class_='content').get_text()
 			return article
 		elif key == 'b_quint':
-			article = link.find('div', class_='story-element story-element-text').get_text()
+			article = link.find('div', id =re.compile('^card-')).get_text()
 			return article
 		elif key == 'ib_times':
 			article = link.find('div', id ='article_content').get_text()

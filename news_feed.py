@@ -36,7 +36,7 @@ for key,value in url_list.items():
 		print("para-->"+paragraph)
 
 	except Exception as e:
-		raise e
+		print("None to display")
 	print()
 	print()
 	print()
