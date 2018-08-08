@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug 1 15:48:39 2018
+
+@author: Abinfinity
+"""
+
 import requests
 import feedparser
 import news_scraper

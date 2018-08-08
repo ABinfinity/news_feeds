@@ -1,16 +1,16 @@
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
-from nltk.stem import PorterStemmer
+# from nltk.stem import PorterStemmer
 
-ps = PorterStemmer()
-text = "I am in love with the shape of you"
+# ps = PorterStemmer()
+text = "the wednesday"
 stopWords = set(stopwords.words("english"))
 words = word_tokenize(text)
 
 freqTable = dict()
 for word in words:
 	word = word.lower()
-	word = word.ps()
+	# word = word.ps()
 	if word in stopWords:
 		continue
 	if word in freqTable:
