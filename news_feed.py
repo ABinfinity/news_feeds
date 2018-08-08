@@ -7,7 +7,7 @@ Created on Thu Aug 1 15:48:39 2018
 
 import requests
 import feedparser
-import news_scraper
+import news_scraper as ns
 
 
 url_list = {'hindustan_times':'https://www.hindustantimes.com/rss/topnews/rssfeed.xml',\
@@ -39,7 +39,7 @@ for key,value in url_list.items():
 		print(title)
 		print(short)
 		print("link-->"+link)
-		paragraph = news_scraper.scraper.scraper(key,link)
+		paragraph = ns.scraper.scraper(key,link)
 		print("para-->"+paragraph)
 
 	except Exception as e:
