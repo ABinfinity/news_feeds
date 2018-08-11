@@ -8,6 +8,7 @@ Created on Thu Aug 1 15:48:39 2018
 import requests
 import feedparser
 import news_scraper as ns
+import para_summary as ps
 
 
 url_list = {'hindustan_times':'https://www.hindustantimes.com/rss/topnews/rssfeed.xml',\
@@ -29,18 +30,22 @@ for key,value in url_list.items():
 	print("key----->"+key)
 	
 	try:
-		# for sup in range(len(d['entries'])):
-		title = "Title-->"+d['entries'][0]['title']
-		
-		short = "Short-->"+d.entries[0].summary
-		
-		link = d['entries'][0]['link']
+		for sup in range(len(d['entries'])):
+			title = d['entries'][sup]['title']
+			
+			# short = "Short-->"+d.entries[sup].summary
+			
+			link = d['entries'][sup]['link']
 
-		print(title)
-		print(short)
-		print("link-->"+link)
-		paragraph = ns.scraper.scraper(key,link)
-		print("para-->"+paragraph)
+			print("Title-->"+title)
+			# print(short)
+			print("link-->"+link)
+			# paragraph = ns.scraper.scraper(key,link)
+			paragraph = ps.summ(link)
+			print("para-->"+paragraph)
+			print()
+			print()
+			
 
 	except Exception as e:
 		print("None to display")

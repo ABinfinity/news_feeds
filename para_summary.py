@@ -1,44 +1,30 @@
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize, sent_tokenize
-# from nltk.stem import PorterStemmer
+from __future__ import absolute_import
+from __future__ import division, print_function, unicode_literals
 
-# ps = PorterStemmer()
-text = "the wednesday"
-stopWords = set(stopwords.words("english"))
-words = word_tokenize(text)
-
-freqTable = dict()
-for word in words:
-	word = word.lower()
-	# word = word.ps()
-	if word in stopWords:
-		continue
-	if word in freqTable:
-		freqTable[word] += 1
-	else :
-		freqTable[word] = 1
-
-sentences = sent_tokenize(text)
-sentenceValue = dict()
-
-for sentence in sentences:
-	for wordValue in freqTable:
-		if wordValue[0] in sentence.lower():
-			sentenceValue[sentence[:12]] += wordValue[1]
-		else:
-			sentenceValue[sentence[:12]] = wordValue[1]
+from sumy.parsers.html import HtmlParser
+from sumy.parsers.plaintext import PlaintextParser
+from sumy.nlp.tokenizers import Tokenizer
+from sumy.summarizers.lsa import LsaSummarizer as Summarizer
+from sumy.nlp.stemmers import Stemmer
+from sumy.utils import get_stop_words
 
 
-sumValues = 0
-for sentence in sentenceValue:
-	sumValues = sentenceValue[sentence]
+LANGUAGE = "english"
+SENTENCES_COUNT = 5
 
-# average value of a sentence from original text
-average = int(sumValues/len(sentenceValue))
 
-summary = " "
-for sentence in sentences:
-	if sentence[:12] in sentenceValue and sentenceValue[sentence[:12]] > (1.5*average):
-		summary += " " + sentence
+def summ(url):
+    # url = "https://www.hindustantimes.com/tech/samsung-galaxy-note-9-launch-live-full-specifications-features-and-more/story-heLEeZMY2rl2j55Wd5LWgP.html"
+    parser = HtmlParser.from_url(url, Tokenizer(LANGUAGE))
+    # or for plain text files
+    # parser = PlaintextParser.from_file("document.txt", Tokenizer(LANGUAGE))
+    stemmer = Stemmer(LANGUAGE)
 
-print(summary)
+    summarizer = Summarizer(stemmer)
+    summarizer.stop_words = get_stop_words(LANGUAGE)
+    summary = " "
+    for sentence in summarizer(parser.document, SENTENCES_COUNT):
+    	summary = summary+str(sentence)
+
+    return summary
+
