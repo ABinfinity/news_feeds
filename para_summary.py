@@ -24,7 +24,7 @@ def summ(url):
     summarizer.stop_words = get_stop_words(LANGUAGE)
     summary = " "
     for sentence in summarizer(parser.document, SENTENCES_COUNT):
-    	summary = summary+str(sentence)
+    	summary = summary+'\n'+'--'+str(sentence)
 
     return summary
 
