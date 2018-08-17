@@ -1,7 +1,16 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug 1 15:48:39 2018
+
+@author: Abinfinity
+"""
+
 from bs4 import BeautifulSoup
 import requests
 import re
 
+
+# scraping paragraphs from different sources
 class scraper():
 	def scraper(key,address):
 		url = requests.get(address).text

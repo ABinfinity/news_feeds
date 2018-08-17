@@ -1,3 +1,13 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug 1 15:48:39 2018
+
+@author: Abinfinity
+"""
+
+
+# producing summary of the news article
+
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
 

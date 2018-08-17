@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug 1 15:48:39 2018
+
+@author: Abinfinity
+"""
+
+# scraping images from news site
+
 from bs4 import BeautifulSoup
 import requests
 import re
@@ -12,8 +21,8 @@ class scraper():
 				image = article.get('src')
 				suf = 'https://www.hindustantimes.com/rf/image_size_960x540'
 				if suf in image:
-					urls = urls+'\n'+str(image)
-			return urls
+					return image
+			
 		
 		elif key == "ndtv_news":
 			for article in link.find_all('img'):
