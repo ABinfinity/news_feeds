@@ -54,7 +54,9 @@ def produce():
 			print("None to display")
 		news[key] = page
 
-	print(news)
+
+	final = json.dumps(news)
+	print(final)
 
 def main():
 	produce()
