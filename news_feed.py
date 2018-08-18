@@ -43,7 +43,7 @@ def produce():
 				link = d['entries'][sup]['link']
 				# paragraph = ns.scraper.scraper(key,link)
 				media = ms.scraper.scraper(key,link)
-				paragraph = ps.summ(link)
+				paragraph = ps.para.summ(link)
 				data = {"title": title, "link": link, "media_link" : media, "summary": paragraph}
 				page.append(data)
 				
@@ -55,7 +55,7 @@ def produce():
 		news[key] = page
 
 
-	final = json.dumps(news)
+	final = json.dumps(news, indent = 4)
 	print(final)
 
 def main():

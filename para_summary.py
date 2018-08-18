@@ -22,21 +22,21 @@ from sumy.utils import get_stop_words
 LANGUAGE = "english"
 SENTENCES_COUNT = 5
 
+class para():
+    def summ(url):
+        # url = "https://www.hindustantimes.com/tech/samsung-galaxy-note-9-launch-live-full-specifications-features-and-more/story-heLEeZMY2rl2j55Wd5LWgP.html"
+        parser = HtmlParser.from_url(url, Tokenizer(LANGUAGE))
+        # or for plain text files
+        # parser = PlaintextParser.from_file("document.txt", Tokenizer(LANGUAGE))
+        stemmer = Stemmer(LANGUAGE)
 
-def summ(url):
-    # url = "https://www.hindustantimes.com/tech/samsung-galaxy-note-9-launch-live-full-specifications-features-and-more/story-heLEeZMY2rl2j55Wd5LWgP.html"
-    parser = HtmlParser.from_url(url, Tokenizer(LANGUAGE))
-    # or for plain text files
-    # parser = PlaintextParser.from_file("document.txt", Tokenizer(LANGUAGE))
-    stemmer = Stemmer(LANGUAGE)
+        summarizer = Summarizer(stemmer)
+        summarizer.stop_words = get_stop_words(LANGUAGE)
+        summary = " "
+        for sentence in summarizer(parser.document, SENTENCES_COUNT):
+        	summary = summary+'\n'+'--'+str(sentence)
 
-    summarizer = Summarizer(stemmer)
-    summarizer.stop_words = get_stop_words(LANGUAGE)
-    summary = " "
-    for sentence in summarizer(parser.document, SENTENCES_COUNT):
-    	summary = summary+'\n'+'--'+str(sentence)
-
-    return summary
+        return summary
 
 
 
