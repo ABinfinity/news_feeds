@@ -12,6 +12,7 @@ import media_scraper as ms # scrape images
 import para_summary as ps # gives summary
 from flask import Flask,jsonify
 from flask_restful import Resource, Api
+import json
 
 app = Flask(__name__)
 api = Api(app)
@@ -56,10 +57,12 @@ class feedup(Resource):
 				print("None to display")
 			
 			news[key] = page
+		final = json.dumps(news, indent = 4)
+		# f_new = json.loads(final, indent = 4)
 
 
 		
-		return jsonify(news),200
+		return final,200
 
 api.add_resource(feedup, '/print')
 

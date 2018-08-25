@@ -15,16 +15,16 @@ import json
 def produce():
 	#list of rss news source
 	url_list = {'hindustan_times':'https://www.hindustantimes.com/rss/topnews/rssfeed.xml',\
-	            # 'ndtv_news':'http://feeds.feedburner.com/ndtvnews-top-stories',\
-	           #  'india_times':'https://timesofindia.indiatimes.com/rssfeedstopstories.cms',\
+	             'ndtv_news':'http://feeds.feedburner.com/ndtvnews-top-stories',\
+	            'india_times':'https://timesofindia.indiatimes.com/rssfeedstopstories.cms',\
 	           #  #'the_hindu':'https://www.thehindu.com/news/feeder/default.rss',\
 	           #  'india_today':'https://www.indiatoday.in/rss/1206584',\
 	           # # 'reuters':'http://feeds.reuters.com/reuters/INtopNews',\
-	           #  'indian_express':'http://www.newindianexpress.com/Nation/rssfeed/?id=170&getXmlFeed=true',\
-	           #  'livemint':'https://www.livemint.com/rss/homepage',\
-	           #  'b_quint':'https://www.bloombergquint.com/stories.rss',\
-	           #  'ib_times':'https://www.ibtimes.co.in/rss/feed',\
-	            # 'b_today':'https://www.businesstoday.in/rss/rssstory.jsp?sid=105'
+	            'indian_express':'http://www.newindianexpress.com/Nation/rssfeed/?id=170&getXmlFeed=true',\
+	            'livemint':'https://www.livemint.com/rss/homepage',\
+	            'b_quint':'https://www.bloombergquint.com/stories.rss',\
+	            'ib_times':'https://www.ibtimes.co.in/rss/feed',\
+	            'b_today':'https://www.businesstoday.in/rss/rssstory.jsp?sid=105'
 	            }
 
 
@@ -57,6 +57,7 @@ def produce():
 
 	final = json.dumps(news, indent = 4)
 	print(final)
+	# print(type(final))
 
 def main():
 	produce()
