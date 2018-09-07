@@ -34,7 +34,7 @@ class para():
         summarizer.stop_words = get_stop_words(LANGUAGE)
         summary = " "
         for sentence in summarizer(parser.document, SENTENCES_COUNT):
-        	summary = summary+'\n'+'--'+str(sentence)
+        	summary = summary+str(sentence)
 
         return summary
 

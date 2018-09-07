@@ -25,8 +25,8 @@ class feedup(Resource):
 	def get(self):
 		#list of rss news source
 		url_list = {'hindustan_times':'https://www.hindustantimes.com/rss/topnews/rssfeed.xml',\
-		           #  'ndtv_news':'http://feeds.feedburner.com/ndtvnews-top-stories',\
-		           #  # 'india_times':'https://timesofindia.indiatimes.com/rssfeedstopstories.cms',\
+		            # 'ndtv_news':'http://feeds.feedburner.com/ndtvnews-top-stories',\
+		           #  'india_times':'https://timesofindia.indiatimes.com/rssfeedstopstories.cms',\
 		           #  #'the_hindu':'https://www.thehindu.com/news/feeder/default.rss',\
 		           #  'india_today':'https://www.indiatoday.in/rss/1206584',\
 		           # # 'reuters':'http://feeds.reuters.com/reuters/INtopNews',\
@@ -34,13 +34,13 @@ class feedup(Resource):
 		           #  'livemint':'https://www.livemint.com/rss/homepage',\
 		           #  'b_quint':'https://www.bloombergquint.com/stories.rss',\
 		           #  'ib_times':'https://www.ibtimes.co.in/rss/feed',\
-		           #  'b_today':'https://www.businesstoday.in/rss/rssstory.jsp?sid=105'
+		            # 'b_today':'https://www.businesstoday.in/rss/rssstory.jsp?sid=105'
 		            }
 
 		news = dict()
 		for key,value in url_list.items():
 			d = feedparser.parse(value)
-			# print("source----->"+key)
+			print("source----->"+key)
 			# print(d['entries'][0])
 			page = []
 			try:
@@ -54,20 +54,20 @@ class feedup(Resource):
 					page.append(data)
 			
 			except Exception as e:
-				raise e
+				print("None to display")
 			
 			news[key] = page
-		final = json.dumps(news,indent = 4)
+		final = json.dumps(news, indent = 4)
 		# f_new = json.loads(final, indent = 4)
 
 
 		
 		return final,200
 
-api.add_resource(feedup, '/')
+api.add_resource(feedup, '/print')
 
 if __name__ == '__main__':
-	app.run(debug = True, port= 8080)
+	app.run(debug = True)
 
 	
 	
