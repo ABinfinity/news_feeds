@@ -5,4 +5,4 @@ A smarter version to inshorts
 
     OR
  
-- Type just click on the **url**: https://arcane-savannah-14941.herokuapp.com/
+- Type just click on the **url**: https://trendy-app-080196.herokuapp.com/
