@@ -6,3 +6,6 @@ A smarter version to inshorts
     OR
  
 - Type just click on the **url**: https://trendy-app-080196.herokuapp.com/
+
+    OR 
+    **url** : https://tinyurl.com/trndy
